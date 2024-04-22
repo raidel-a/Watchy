@@ -33,7 +33,7 @@ void Watchy::init(String datetime) {
     case WATCHFACE_STATE:
       showWatchFace(true); // partial updates on tick
       if (settings.vibrateOClock) {
-        if (currentTime.Minute == 0) {
+        if (currentTime.Minute == 0 || currentTime.Minute == 15 || currentTime.Minute == 30 || currentTime.Minute == 45) {
           // The RTC wakes us up once per minute
           vibMotor(75, 4);
         }
